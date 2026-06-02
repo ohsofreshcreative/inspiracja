@@ -1,0 +1,145 @@
+.b-tabs {
+
+  /* PANELE: ukrywanie + animacja wejścia */
+  .__content {
+    display: none;
+    animation: moving 0.4s ease;
+  }
+
+  @keyframes moving {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .__content.active {
+    display: block;
+  }
+
+  /* (drugi wariant – jeśli kiedyś użyjesz) */
+  .__content-second {
+    display: none;
+    animation: themoving 0.4s ease;
+  }
+
+  @keyframes themoving {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .tabs-panels {
+    will-change: transform, opacity;
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    align-items: center;
+  }
+
+  .tabs-panels.is-animating {
+    animation: panelsIn .35s ease both;
+  }
+
+  @keyframes panelsIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.995);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tabs-panels.is-animating {
+      animation: none;
+    }
+  }
+
+  .__content-second.active {
+    display: block;
+  }
+
+  /* STYL PRZYCISKU TABA (Twoje) */
+  .tab_btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 24px;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--bg-light);
+  }
+
+  .tab_btn:hover {
+  }
+
+  .tab_btn.active:hover {
+  }
+
+  .tab_btn.active {
+    background-color: var(--color-primary);
+	color:#FFF;
+    position: relative;
+  }
+
+  .tab_btn.active .tabs__h4 {
+ /*    color: #fff; */
+  }
+
+  /* Twój „badge” przy aktywnym tabie (pół na pół poza) */
+  .tab_btn.active::before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: -16px;
+    /* jak bardzo wystaje */
+    width: 24px;
+    height: 24px;
+    background-color: var(--main);
+    /* np. kolor marki */
+    border-radius: 50%;
+	background-color: var(--color-secondary);
+    outline: 4px solid var(--bg);
+    z-index: 2;
+  }
+
+  .tab_btn.active::after {}
+
+  /* Pudełko kontentu (jak w Twoim przykładzie 2) */
+  .content_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Połowa obrazka poza kontener (jak w przykładzie 2) */
+  .img-tabs-half {
+    position: absolute;
+    top: -15%;
+    right: -50%;
+    /* wystaje na 50% w prawo */
+  }
+
+  /* Responsywne drobiazgi (zostawiasz swoje) */
+  @media screen and (max-width:576px) {
+    .tab_btn {
+      padding: 18px 35px;
+    }
+  }
+
+}
