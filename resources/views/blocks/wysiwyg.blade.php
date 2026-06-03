@@ -3,18 +3,18 @@
 <section
 	data-gsap-anim="section"
 	@if(!empty($section_id)) id="{{ $section_id }}" @endif
-	@class([ 'b-wysiwyg relative -smt' ,
+	@class([ 'b-wysiwyg relative' ,
 	$sectionClass=> filled($sectionClass),
 	$section_class => filled($section_class),
 	$background => filled($background) && $background !== 'none',
 	])>
 
-	<div class="__wrapper c-main relative">
+	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 pt-20 md:mt-0">
 		@if (!empty($g_wysiwyg['header']))
-		<h2 data-gsap-element="header" class="">{{ $g_wysiwyg['header'] }}</h2>
+		<p data-gsap-element="header" class="text-white text-h1">{{ $g_wysiwyg['header'] }}</p>
 		@endif
 
-		<div data-gsap-element="txt" class="__txt mt-4">
+		<div data-gsap-element="txt" class="__txt text-white mt-0 md:mt-40">
 			{!! $g_wysiwyg['txt'] !!}
 		</div>
 

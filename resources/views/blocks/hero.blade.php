@@ -3,48 +3,48 @@
 <section
 	data-gsap-anim="section"
 	@if(!empty($section_id)) id="{{ $section_id }}" @endif
-	@class([ 'b-hero relative -spt overflow-visible' ,
+	@class([ 'b-hero relative overflow-hidden radius mx-6' ,
 	$sectionClass=> filled($sectionClass),
 	$section_class => filled($section_class),
 	$background => filled($background) && $background !== 'none',
 	])>
 
-	<div class=" __wrapper c-main grid grid-cols-1 md:grid-cols-2 items-center gap-10">
-		<div class="__content relative flex flex-col justify-center z-20 pt-10 pb-10 md:py-30">
-			<h1 data-gsap-element="header" class="m-header">
-				{{ $g_hero['title'] }}
-			</h1>
-			<div data-gsap-element="text" class="">
-				{!! $g_hero['text'] !!}
-			</div>
+	<div class=" __wrapper relative" style="background-image:linear-gradient(rgba(0,46,255,0.6), rgba(0,46,255,0.6)), url('{{ $g_hero['image']['url'] }}'); background-size:cover; background-position:center;">
+		<div class="__inside c-main relative">
+			<div class="__content py-60">
 
-			<div class="inline-buttons m-btn">
-				@if (!empty($g_hero['button1']))
-				<x-button
-					:href="$g_hero['button1']['url']"
-					variant="primary"
-					class=""
-					data-gsap-element="btn">
-					{{ $g_hero['button1']['title'] }}
-				</x-button>
-				@endif
+				<div class="text-center">
+					<h1 data-gsap-element="header" class=" text-white">
+						{!! $g_hero['header'] !!}
+					</h1>
+					<h2 data-gsap-element="txt" class="text-lg text-white mt-2">
+						{!! $g_hero['text'] !!}
+					</h2>
+					@if (!empty($g_hero['button1']))
+					<div class="inline-buttons mx-auto m-btn justify-center">
+						@if (!empty($g_hero['button1']))
+						<x-button
+							:href="$g_hero['button1']['url']"
+							variant="secondary"
+							class=""
+							data-gsap-element="btn">
+							{{ $g_hero['button1']['title'] }}
+						</x-button>
+						@endif
 
-				@if (!empty($g_hero['button2']))
-				<x-button
-					:href="$g_hero['button2']['url']"
-					variant="secondary"
-					class=""
-					data-gsap-element="btn">
-					{{ $g_hero['button2']['title'] }}
-				</x-button>
-				@endif
+						@if (!empty($g_hero['button2']))
+						<x-button
+							:href="$g_hero['button2']['url']"
+							variant="white"
+							class=""
+							data-gsap-element="btn">
+							{{ $g_hero['button2']['title'] }}
+						</x-button>
+						@endif
+					</div>
+					@endif
+				</div>
 			</div>
 		</div>
-
-		<div class="__img relative z-20 overflow-visible">
-			<img src="{{ $g_hero['image']['url'] }}" alt="{{ $g_hero['image']['alt'] }}"
-				class="" />
-		</div>
-	</div>
 
 </section>

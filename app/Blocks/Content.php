@@ -17,7 +17,7 @@ class Content extends Block
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
-		'mode' => false,
+		'mode' => true,
 		'jsx' => true,
 		'anchor' => true,
 		'customClassName' => true,
@@ -46,6 +46,11 @@ class Content extends Block
 				'return_format' => 'array',
 				'preview_size' => 'thumbnail',
 			])
+			->addImage('icon', [
+				'label' => 'Ikona',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+			])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addWysiwyg('text', [
 				'label' => 'Treść',
@@ -54,11 +59,11 @@ class Content extends Block
 				'media_upload' => true,
 			])
 			->addLink('button1', [
-				'label' => 'Przycisk #1',
+				'label' => 'Przycisk #1 - biały',
 				'return_format' => 'array',
 			])
 			->addLink('button2', [
-				'label' => 'Przycisk #2',
+				'label' => 'Przycisk #2 - zielony',
 				'return_format' => 'array',
 			])
 			->endGroup()
@@ -71,6 +76,12 @@ class Content extends Block
 			])
 			->addText('section_class', [
 				'label' => 'Dodatkowe klasy CSS',
+			])
+			->addTrueFalse('circle', [
+				'label' => 'Okrąg pod zdjęciem',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
 			])
 			->addTrueFalse('nolist', [
 				'label' => 'Brak punktatorów',
@@ -134,6 +145,7 @@ class Content extends Block
 			'nomt' => (bool) get_field('nomt'),
 			'gap' => (bool) get_field('gap'),
 			'nolist' => (bool) get_field('nolist'),
+			'circle' => (bool) get_field('circle'),
 
 			'background' => get_field('background') ?: 'none',
 		];
@@ -144,6 +156,7 @@ class Content extends Block
 			'nomt' => '!mt-0',
 			'gap' => 'wider-gap',
 			'nolist' => 'no-list',
+			'circle' => 'circle',
 		]);
 
 		return $fields;

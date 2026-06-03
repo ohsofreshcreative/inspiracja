@@ -1,0 +1,137 @@
+/* Booking System Styles */
+.booking-system {
+    .booking-calendar {
+        width: 100% !important;
+        
+        #booking-date {
+            width: 100% !important;
+            
+            // Kalendarz inline - WYMUŚ 100% na wszystkich poziomach
+            .flatpickr-calendar {
+                width: 100% !important;
+                max-width: none !important;
+                box-shadow: none;
+                border: 1px solid #e5e7eb;
+            }
+            
+            .flatpickr-months {
+                width: 100% !important;
+            }
+            
+            .flatpickr-innerContainer {
+                width: 100% !important;
+            }
+            
+            .flatpickr-rContainer {
+                width: 100% !important;
+            }
+            
+            .flatpickr-days {
+                width: 100% !important;
+            }
+            
+            .dayContainer {
+                width: 100% !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+            }
+            
+            // Rozciągnij poszczególne dni - 7 dni w wierszu
+            .flatpickr-day {
+                flex: 0 0 calc(14.28% - 4px) !important;
+                max-width: calc(14.28% - 4px) !important;
+                height: 45px !important;
+                line-height: 45px !important;
+                margin: 2px !important;
+            }
+            
+            // Nagłówki dni (Pon, Wt, itp.)
+            .flatpickr-weekdays {
+                width: 100% !important;
+            }
+            
+            .flatpickr-weekday {
+                flex: 0 0 14.28% !important;
+            }
+        }
+    }
+    
+    .hour-slot {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 2px solid #e5e7eb;
+        background: white;
+        
+        &:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-2px);
+			color: var(--color-primary);
+        }
+        
+        &.selected {
+            background: var(--color-primary) !important;
+            color: white !important;
+            border-color: var(--color-primary) !important;
+        }
+        
+        &.booked {
+            background-color: #e5e7eb !important;
+            color: #9ca3af !important;
+            cursor: not-allowed !important;
+            border-color: #d1d5db !important;
+            
+            &:hover {
+                transform: none !important;
+            }
+        }
+    }
+    
+    .booking-summary {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        flex-shrink: 0;
+        width: 100%;
+        
+        @media (min-width: 1024px) {
+            width: 350px;
+        }
+    }
+}
+
+/* Flatpickr custom styles - globalnie */
+.flatpickr-calendar.inline {
+    width: 100% !important;
+    max-width: none !important;
+    
+    .flatpickr-innerContainer,
+    .flatpickr-rContainer,
+    .flatpickr-days,
+    .dayContainer {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    .dayContainer {
+        flex-wrap: wrap !important;
+    }
+    
+    .flatpickr-day {
+        flex: 0 0 calc(14.28% - 4px) !important;
+        max-width: calc(14.28% - 4px) !important;
+    }
+}
+
+.flatpickr-day.selected {
+    background: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.flatpickr-day.today {
+    border-color: var(--color-primary);
+}
+
+.flatpickr-day:hover {
+    background: var(--color-primary-light);
+}

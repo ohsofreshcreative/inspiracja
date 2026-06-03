@@ -23,8 +23,9 @@
 		cursor: pointer;
 		color: var(--body);
 
-		.__arrow {
-			transition: transform 0.3s ease-in-out;
+		.__icon-plus,
+		.__icon-minus {
+			transition: opacity 0.3s ease-in-out;
 		}
 	}
 
@@ -65,8 +66,24 @@
 		border: 1px solid var(--primary);
 	}
 
-	input:checked+.accordion-label .__arrow {
-		transform: rotate(180deg);
+	input:checked+.accordion-label {
+		.__icon-plus {
+			display: none;
+		}
+
+		.__icon-minus {
+			display: block;
+		}
+	}
+
+	.accordion-label {
+		.__icon-plus {
+			display: block;
+		}
+
+		.__icon-minus {
+			display: none;
+		}
 	}
 
 	.accordion:has(input:checked) {
@@ -76,5 +93,14 @@
 	input:checked~.accordion-content {
 		max-height: 1200px;
 		padding: 0 24px 24px 24px;
+	}
+}
+
+
+
+.o-nas .b-accordion {
+	.py-30 {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
 	}
 }

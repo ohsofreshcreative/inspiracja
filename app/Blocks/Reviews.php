@@ -17,7 +17,7 @@ class Reviews extends Block
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
-		'mode' => false,
+		'mode' => true,
 		'jsx' => true,
 	];
 
@@ -41,6 +41,11 @@ class Reviews extends Block
 			->addGroup('g_reviews', ['label' => ''])
 			->addText('title', ['label' => 'Tytuł'])
 			->addWysiwyg('text', ['label' => 'Opis', 'media_upload' => 0, 'tabs' => 'visual'])
+
+			->addLink('button', [
+				'label' => 'Przycisk',
+				'return_format' => 'array',
+			])
 			->endGroup()
 
 			/*--- OPINIE ---*/
@@ -53,13 +58,18 @@ class Reviews extends Block
 				'max' => 15,
 				'button_label' => 'Dodaj kafelek'
 			])
+			->addImage('image', [
+				'label' => 'Zdjęcie',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+			])
+			->addText('name', [
+				'label' => 'Klient',
+			])
 			->addTextarea('txt', [
 				'label' => 'Opis',
 				'rows' => 4,
 				'new_lines' => 'br',
-			])
-			->addText('name', [
-				'label' => 'Klient',
 			])
 			->endRepeater()
 

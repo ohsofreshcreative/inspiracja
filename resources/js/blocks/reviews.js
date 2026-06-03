@@ -88,7 +88,7 @@ const initReviewsSwiper = (scope = document) => {
       navigation: { nextEl: swiperEl.querySelector('.__next'), prevEl: swiperEl.querySelector('.__prev') },
       breakpoints: {
         768: { slidesPerView: 2.5, spaceBetween: 24 },
-        1024: { slidesPerView: 3.8, spaceBetween: 24 },
+        1024: { slidesPerView: 2.5, spaceBetween: 24 },
       },
       on: {
         // Uruchom logikę popupa po załadowaniu i zmianie slajdu

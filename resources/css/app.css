@@ -11,7 +11,7 @@
   --body: 42 63 80; /* #2A3F50 */
 
 /* PRIMARY (lewa kolumna – granat) */
---primary: 0 87 155; /* #00579B */
+--primary: 0 46 255; /* #002EFF */
 --p-hover: 4 6 45; /* #04062D */
 
 /* PRIMARY (niebieski) */
@@ -31,7 +31,7 @@
 
 
 /* SECONDARY (turkusowy) */
---secondary: 0 192 197; /* #00C0C5 */
+--secondary: 0 255 191; /* #00FFBF */
 --s-hover: 0 160 164;   /* #00A0A4 */
 
 --s-50: 171 244 246;  /* #ABF4F6 */
@@ -65,11 +65,11 @@
 
   /* neutrals / fixed backgrounds */
   --gray: #2a3f50;
-  --bg: #F4F9FF;
-  --bg-light: #F7EEE5;
+  --bg: #002EFF;
+  --bg-light: #E0E6FF;
   --bg-lighter: #E9F8F3;
   --bg-brand: #002704;
-  --bg-dark: #071622;
+  --bg-dark: #011053;
 }
 
 @theme {
@@ -141,14 +141,16 @@
 }
 
 @import '../css/variables.scss';
-
+@import './booking.scss';
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 @import 'baguettebox.js/dist/baguetteBox.min.css';
 
 /*-- USED ---*/
-@import '../css/blocks/hero.scss';
+@import '../css/blocks/banner.scss';
+@import '../css/blocks/about.scss';
+@import '../css/blocks/tiles.scss';
 /*-- NOT USED ---*/
 @import '../css/blocks/accordion.scss';
 @import '../css/blocks/cards.scss';

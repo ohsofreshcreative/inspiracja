@@ -9,7 +9,7 @@ use App\Support\SectionClasses;
 class Hero extends Block
 {
 	public $name = 'Hero';
-	public $description = 'Hero';
+	public $description = 'hero - wersja hero z tłem';
 	public $slug = 'hero';
 	public $category = 'formatting';
 	public $icon = 'align-full-width';
@@ -17,7 +17,7 @@ class Hero extends Block
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
-		'mode' => false,
+		'mode' => true, 
 		'jsx' => true,
 	];
 
@@ -38,18 +38,21 @@ class Hero extends Block
 			])
 			/*--- TAB #1 ---*/
 			->addTab('Treść', ['placement' => 'top'])
-			->addGroup('g_hero', ['label' => 'Hero'])
+			->addGroup('g_hero', ['label' => 'hero'])
 			->addImage('image', [
 				'label' => 'Obraz',
 				'return_format' => 'array',
 				'preview_size' => 'thumbnail',
 			])
-			->addText('title', ['label' => 'Tytuł'])
-			->addWysiwyg('text', [
+			->addTextarea('header', [
+				'label' => 'Nagłówek',
+				'rows' => 2,
+				'new_lines' => 'br',
+			])
+			->addTextarea('text', [
 				'label' => 'Treść',
-				'tabs' => 'all', // 'visual', 'text', 'all'
-				'toolbar' => 'full', // 'basic', 'full'
-				'media_upload' => true,
+				'rows' => 2,
+				'new_lines' => 'br',
 			])
 			->addLink('button1', [
 				'label' => 'Przycisk #1',

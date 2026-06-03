@@ -9,7 +9,9 @@
 	@php(wp_head())
 
 	{{-- Fonts --}}
-	<link rel="stylesheet" href="https://use.typekit.net/qgh2icj.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
 	{{-- Styles --}}
 	@vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -36,13 +38,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 		@elseif (function_exists('is_product') && is_product())
 
-		<main id="main" class="main -menu-mt">
+		<main id="main" class="main c-main -menu-mt pt-20">
 			@yield('content')
 		</main>
 
 		@else
 
-		<main id="main" class="main -menu-mt">
+		<main id="main" class="main mt-6">
 			@yield('content')
 		</main>
 

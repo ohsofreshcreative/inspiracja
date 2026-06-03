@@ -475,3 +475,42 @@ add_filter('paginate_links_output', function ($output) {
     $output = str_replace('next', 'next', $output);
     return $output;
 });
+
+
+
+
+/*--- CHANGE TO MODE EDIT---*/
+
+
+add_filter('acf/blocks/wrap_attributes', function ($attributes, $block) {
+    $attributes['mode'] = 'edit';
+    return $attributes;
+}, 10, 2);
+
+// Dodatkowy filtr dla zapisanych bloków
+add_filter('render_block', function ($block_content, $block) {
+    if (strpos($block['blockName'], 'acf/') === 0 && is_admin()) {
+        // Wymusza edit w edytorze
+        $block_content = str_replace('data-mode="preview"', 'data-mode="edit"', $block_content);
+    }
+    return $block_content;
+}, 10, 2);
+
+
+
+add_action('woocommerce_before_cart', function() {
+    echo '<div class="woo-page-wrapper c-main pt-24 pb-20 mt-12">';
+}, 5);
+
+add_action('woocommerce_before_checkout_form', function() {
+    echo '<div class="woo-page-wrapper c-main pt-24 pb-20 mt-12">';
+}, 5);
+
+// Zamknij wrapper dla Cart i Checkout
+add_action('woocommerce_after_cart', function() {
+    echo '</div>';
+}, 999);
+
+add_action('woocommerce_after_checkout_form', function() {
+    echo '</div>';
+}, 999);

@@ -16,7 +16,7 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
-    "@roots/vite-plugin": "^2.1.0",
+    "@roots/vite-plugin": "^2.2.0",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/vite": "^4.3.0",
     "@types/react": "^19.1.13",
@@ -25,13 +25,14 @@
     "@wordpress/dependency-extraction-webpack-plugin": "^6.36.0",
     "autoprefixer": "^10.5.0",
     "laravel-vite-plugin": "^3.1.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",
-    "vite": "^8.0.13"
+    "vite": "^8.0.16"
   },
   "dependencies": {
     "alpinejs": "^3.14.9",
     "baguettebox.js": "^1.13.0",
+    "flatpickr": "^4.6.13",
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
     "react": "^19.1.1",

@@ -104,3 +104,16 @@ collect(['setup', 'filters', 'post-types'])
 add_filter('sage/acf-composer/fields', fn() => [
 	App\Blocks\ExampleBlock::class,
 ]);
+
+
+add_filter('woocommerce_is_sold_individually', '__return_true');
+
+
+collect(['setup', 'filters', 'post-types', 'Woocommerce/booking'])
+    ->each(function ($file) {
+        if (! locate_template($file = "app/{$file}.php", true, true)) {
+            wp_die(
+                sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file)
+            );
+        }
+    });

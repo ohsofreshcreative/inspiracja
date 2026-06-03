@@ -18,7 +18,7 @@ class Accordion extends Block
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
-		'mode' => false,
+		'mode' => true,
 		'jsx' => true,
 		'anchor' => true,
 		'customClassName' => true,
@@ -67,6 +67,12 @@ class Accordion extends Block
 				'layout' => 'table',
 				'min' => 1,
 				'button_label' => 'Dodaj panel',
+			])
+
+			->addImage('icon', [
+				'label' => 'Ikona',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
 			])
 			->addText('title', [
 				'label' => 'Tytuł',

@@ -9,19 +9,19 @@ import path from 'path'
 
 export default defineConfig(({ command }) => ({
   server: {
-    host: 'sage.local',
+    host: 'inspiracja.local',
     port: 5981,
     strictPort: true,
     cors: true,
     hmr: {
       protocol: 'ws',
-      host: 'sage.local',
+      host: 'inspiracja.local',
       port: 5981,
     },
   },
 
   base: command === 'build'
-    ? '/wp-content/themes/sage/public/build/'
+    ? '/wp-content/themes/inspiracja/public/build/'
     : '/build/',
 
   plugins: [

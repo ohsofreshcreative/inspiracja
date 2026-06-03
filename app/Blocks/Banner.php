@@ -17,7 +17,7 @@ class Banner extends Block
 	public $mode = 'edit';
 	public $supports = [
 		'align' => false,
-		'mode' => false,
+		'mode' => true,
 		'jsx' => true,
 	];
 
@@ -49,11 +49,10 @@ class Banner extends Block
 				'rows' => 2,
 				'new_lines' => 'br',
 			])
-			->addWysiwyg('text', [
+			->addTextarea('text', [
 				'label' => 'Treść',
-				'tabs' => 'all',
-				'toolbar' => 'full',
-				'media_upload' => true,
+				'rows' => 2,
+				'new_lines' => 'br',
 			])
 			->addLink('button1', [
 				'label' => 'Przycisk #1',
