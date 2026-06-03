@@ -1244,6 +1244,12 @@ article.post:hover {
 
 /*--- !CART ---*/
 
+.woocommerce-cart {
+	.woocommerce-notices-wrapper {
+		display:none !important;
+	}
+}
+
 .woocommerce .cart-collaterals .cart_totals,
 .woocommerce-page .cart-collaterals .cart_totals {
 	width: 100%;
