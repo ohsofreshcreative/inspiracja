@@ -36,7 +36,7 @@ function display_booking_form()
     }
     
     $available_hours = get_field('available_hours', $product_id);
-    $min_hours = get_field('booking_duration_min', $product_id) ?: 1;
+    $min_hours = get_field('booking_duration_min', $product_id) ?: 2;
     $max_hours = get_field('booking_duration_max', $product_id) ?: 8;
     $max_days = get_field('excluded_days', $product_id) ?: 30;
     $base_price = $product->get_price();
@@ -74,7 +74,7 @@ function display_booking_form()
 			<div class="booking-hours mb-4">
 				<label class="block text-sm font-semibold mb-2">
 					Wybierz godziny (od - do)
-				<span class="text-gray-500 text-xs">(min. <?php echo $min_hours; ?>h)</span>
+				<span class="text-gray-500 text-xs">(min. 2h)</span>
 				</label>
 				<div class="hours-grid grid grid-cols-4 md:grid-cols-6 gap-2">
 					<?php foreach ($hours_list as $hour): ?>
@@ -156,7 +156,7 @@ function validate_booking_data($passed, $product_id, $quantity)
     }
     
     $hours_count = intval($_POST['booking_hours_count']);
-    $min_hours = get_field('booking_duration_min', $product_id) ?: 1;
+    $min_hours = get_field('booking_duration_min', $product_id) ?: 2;
     $max_hours = get_field('booking_duration_max', $product_id) ?: 8;
     
     if ($hours_count < $min_hours) {
