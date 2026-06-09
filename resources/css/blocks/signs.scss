@@ -1,0 +1,49 @@
+.b-signs {
+	overflow: visible;
+
+	.signs-marquee {
+		overflow: visible;
+	}
+
+	.signs-marquee .swiper-wrapper {
+		transition-timing-function: linear;
+		align-items: center;
+	}
+
+	.signs-marquee .swiper-slide {
+		width: auto;
+		flex-shrink: 0;
+	}
+
+	.__item {
+		display: inline-flex;
+		align-items: center;
+		font-family: var(--font-header, inherit);
+		font-size: clamp(2.25rem, 6vw, 5.5rem);
+		font-weight: 700;
+		line-height: 0.95;
+		letter-spacing: -0.04em;
+		text-transform: uppercase;
+		white-space: nowrap;
+		padding: 0.2em 0;
+	}
+
+	.__item::after {
+		content: '';
+		display: inline-block;
+		margin-left: 1.5em;
+		color: rgb(var(--secondary));
+		font-size: 0.55em;
+		transform: translateY(-0.02em);
+	}
+
+	@media (max-width: 767px) {
+		.signs-marquee {
+			mask-image: none;
+		}
+
+		.__item {
+			font-size: clamp(1.75rem, 10vw, 3rem);
+		}
+	}
+}

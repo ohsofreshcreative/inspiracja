@@ -3,7 +3,7 @@
 <section
 	data-gsap-anim="section"
 	@if(!empty($section_id)) id="{{ $section_id }}" @endif
-	@class([ 'b-hero relative overflow-hidden radius mx-6' ,
+	@class([ 'b-hero relative z-20 overflow-hidden radius mx-6' ,
 	$sectionClass=> filled($sectionClass),
 	$section_class => filled($section_class),
 	$background => filled($background) && $background !== 'none',

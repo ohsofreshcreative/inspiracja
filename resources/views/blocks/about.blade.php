@@ -9,7 +9,7 @@
 	$background => filled($background) && $background !== 'none',
 	])>
 
-	<div class="__wrapper c-main relative">
+	<div class="__wrapper c-main relative z-10">
 		<div class="__col grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-20">
 			@if (!empty($g_about['image']))
 			<div data-gsap-element="img" class="__img h-full order1">
@@ -50,5 +50,5 @@
 
 		</div>
 	</div>
-
+	<img class="absolute opacity-50 -top-11/12 z-0" src="/wp-content/uploads/2026/06/ring.svg" />
 </section>
