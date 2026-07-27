@@ -11,7 +11,7 @@
 			@endfor
 		</div>
 	</div>
-	<img class="__bg absolute -top-10 opacity-50 scale-120 pointer-events-none" src="/wp-content/uploads/2025/12/logo-stroke.svg" />
+	<!-- <img class="__bg absolute -top-10 opacity-50 scale-120 pointer-events-none" src="/wp-content/uploads/2026/07/big-ring.svg" /> -->
 	</div>
 
 	<div class=" bg-white footer-bottom">
