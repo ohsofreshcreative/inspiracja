@@ -38,7 +38,7 @@ function display_booking_form()
     $available_hours = get_field('available_hours', $product_id);
     $min_hours = get_field('booking_duration_min', $product_id) ?: 2;
     $max_hours = get_field('booking_duration_max', $product_id) ?: 8;
-    $max_days = get_field('excluded_days', $product_id) ?: 30;
+    $max_days = 120;
     $base_price = $product->get_price();
     
     // Przygotuj listę godzin

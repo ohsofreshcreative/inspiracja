@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productId = config.dataset.productId;
     const minHours = parseInt(config.dataset.minHours || '2', 10);
     const maxHours = parseInt(config.dataset.maxHours || '8', 10);
-    const maxDays = parseInt(config.dataset.maxDays || '30', 10);
+    const maxDays = parseInt(config.dataset.maxDays || '120', 10);
     
     let selectedHours = [];
     let startHour = null;
