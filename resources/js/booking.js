@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import { Polish } from 'flatpickr/dist/l10n/pl.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const bookingSystem = document.querySelector('.booking-system');
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         minDate: 'today',
         maxDate: new Date().fp_incr(maxDays),
         dateFormat: 'd-m-Y',
-        locale: 'pl',
+        locale: Polish,
         disable: [
             function(date) {
                 // Wyłącz niedziele (0) i soboty (6) opcjonalnie
