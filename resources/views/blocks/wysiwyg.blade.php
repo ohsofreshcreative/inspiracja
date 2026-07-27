@@ -9,7 +9,7 @@
 	$background => filled($background) && $background !== 'none',
 	])>
 
-	<div class="__wrapper c-main relative grid grid-cols-1 md:grid-cols-2 gap-8 pt-20 md:mt-0">
+	<div class="__wrapper c-main relative pt-20 md:mt-0">
 		@if (!empty($g_wysiwyg['header']))
 		<p data-gsap-element="header" class="text-white text-h1">{{ $g_wysiwyg['header'] }}</p>
 		@endif

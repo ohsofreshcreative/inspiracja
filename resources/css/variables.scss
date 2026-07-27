@@ -1246,7 +1246,7 @@ article.post:hover {
 
 .woocommerce-cart {
 	.woocommerce-notices-wrapper {
-		display:none !important;
+		display: none !important;
 	}
 }
 
@@ -1264,16 +1264,40 @@ article.post:hover {
 	display: none !important;
 }
 
+.woocommerce-checkout-payment label {
+	color: var(--text-body) !important;
+
+	a {
+		text-decoration: underline !important;
+	}
+}
+
+
+.woocommerce-terms-and-conditions-wrapper .__wrapper {
+	padding: 0 !important;
+
+	.__txt {
+		padding: 0 !important;
+		margin: 0 !important;
+		color: #000;
+	}
+}
+
 /*--- !CHECKOUT ---*/
 
 .woocommerce-checkout {
-	h3, h4 {
+
+	h3,
+	h4 {
 		color: #FFF;
 	}
+
 	.woocommerce form .form-row label {
-		color:#FFF
+		color: #FFF
 	}
-	.woocommerce form .form-row .input-text, .woocommerce form .form-row select {
+
+	.woocommerce form .form-row .input-text,
+	.woocommerce form .form-row select {
 		padding: 16px;
 	}
 }
