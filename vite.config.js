@@ -10,13 +10,13 @@ import path from 'path'
 export default defineConfig(({ command }) => ({
   server: {
     host: 'inspiracja.local',
-    port: 5981,
+    port: 6001,
     strictPort: true,
     cors: true,
     hmr: {
       protocol: 'ws',
       host: 'inspiracja.local',
-      port: 5981,
+      port: 6001,
     },
   },
 

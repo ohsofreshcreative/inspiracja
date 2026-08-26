@@ -149,7 +149,14 @@ function validate_booking_data($passed, $product_id, $quantity)
         wc_add_notice('Proszę wybrać datę rezerwacji.', 'error');
         return false;
     }
-    
+
+    $booking_date = \DateTime::createFromFormat('d-m-Y', sanitize_text_field($_POST['booking_date']));
+    $tomorrow = new \DateTime('tomorrow');
+    if (!$booking_date || $booking_date < $tomorrow) {
+        wc_add_notice('Rezerwacja możliwa jest najwcześniej od jutra.', 'error');
+        return false;
+    }
+
     if (empty($_POST['booking_selected_hours'])) {
         wc_add_notice('Proszę wybrać godziny rezerwacji.', 'error');
         return false;

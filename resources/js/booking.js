@@ -2,6 +2,8 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Polish } from 'flatpickr/dist/l10n/pl.js';
 
+flatpickr.localize(Polish);
+
 document.addEventListener('DOMContentLoaded', function() {
     const bookingSystem = document.querySelector('.booking-system');
     
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicjalizuj kalendarz Flatpickr
     const datePicker = flatpickr('#booking-date', {
         inline: true,
-        minDate: 'today',
+        minDate: new Date().fp_incr(1),
         maxDate: new Date().fp_incr(maxDays),
         dateFormat: 'd-m-Y',
         locale: Polish,
